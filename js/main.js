@@ -1,3 +1,7 @@
+//ACLARACION: oriento el proyecto a un ecommerce, porque en el curso de Desarrollo web, hice un sitio de carteras, para el negocio de mi pareja.
+//La idea es seguir optimizando eso y hacerlo funcionar, por lo que, todo el desarrollo aqui contenido, lo puedo llevar a aquel proyecto! 
+// GRACIAS!!!!
+
 // (12 productos)
 const products = [
     { id: 1, name: 'Hamburguesa', description: 'Hamburguesa completa, con jyq, cebolla, huevo, tomate y lechuga', price: 7500 },
