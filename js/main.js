@@ -45,7 +45,7 @@ function generateProductCards() {
 function updateQuantity(card, change) {
     const quantityInput = card.querySelector('.quantity');
     let quantity = parseInt(quantityInput.value, 10) + change;
-    quantity = Math.max(quantity, 0); // No permitir valores negativos
+    quantity = Math.max(quantity, 0);
     quantityInput.value = quantity;
 }
 
@@ -73,14 +73,24 @@ function updateCartDisplay() {
     const cartContainer = document.getElementById('cart-items');
     cartContainer.innerHTML = '';
 
+    let total = 0; // acumula el total
+
     cartItems.forEach(item => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
+        const itemTotal = item.price * item.quantity; // recordatorio: calcula el total del item
+        total += itemTotal; // recordatorio: suma el total del item al total general
         cartItem.innerHTML = `
-            <p>${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}</p>
+            <p>${item.name} (x${item.quantity}) - $${itemTotal.toFixed(2)}</p>
         `;
         cartContainer.appendChild(cartItem);
     });
+
+    // Mostrar el total en el carrito
+    const totalElement = document.createElement('div');
+    totalElement.className = 'cart-total';
+    totalElement.innerHTML = `<p>Total: $${total.toFixed(2)}</p>`;
+    cartContainer.appendChild(totalElement);
 }
 
 // Finalizar compra

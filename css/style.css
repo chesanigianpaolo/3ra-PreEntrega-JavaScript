@@ -86,6 +86,16 @@ main {
     margin-bottom: 20px;
 }
 
+.cart-item {
+    margin-bottom: 10px;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
 #checkout-btn {
     background-color: #28a745;
     border: none;
@@ -111,7 +121,6 @@ main {
     right: 20px;
     z-index: 1000;
 }
-
 
 footer {
     background-color: #333;
